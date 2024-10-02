@@ -16,6 +16,6 @@ As an example, this sketch features the following functionalities:
 
 The Otto Humanoid build process is detailed in [this instructable](https://www.instructables.com/Otto-DIY-Humanoid-Robot/).
 Instead of the Arduino Nano, I used a 30-pin (instead of the longer 38-pin) ESP32 SoC on a modified mini breadboard, as explained [here](https://www.pangodream.es/breadboard-adapter-for-esp32-dev-board).
-It may also be possible (and easier) to use an [Arduino Nano ESP32](https://store.arduino.cc/en-be/products/nano-esp32) on the standard Nano Shield I/O board, though I have not tried this myself.
+It may also be possible (and easier) to use an [Arduino Nano ESP32](https://store.arduino.cc/products/nano-esp32) on the standard Nano Shield I/O board, though I have not tried this myself.
 
-Before loading the sketch, you will need to update it with the pin numbers your peripherals are connected to and either set you WiFi connection credentials or disable WiFi by commenting out `#define ENABLE_WIFI`.
+Before loading the sketch, you will need to update it with the pin numbers your peripherals are connected to and either set your WiFi connection credentials or disable WiFi by commenting out `#define ENABLE_WIFI`.
