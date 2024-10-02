@@ -6,7 +6,7 @@ Replacing the nano with an ESP32, we can load more extensive programs and make u
 
 As an example, [this sketch](OttoDIY_ESP32.ino) features the following functionalities:
 * **OTA updates**: After an initial upload via USB-C, any subsequent revisions of the sketch can be uploaded wirelessly via WiFi. This is especially handy in case of ESP32 versions which otherwise require an onboard button to be depressed while uploading via USB-C. Note that WiFi is turned off once you press the touch sensor to switch over to one of the following modes:
-* **App mode**: Otto can be fully controlled via bluetooth using the app (see android_app folder).
+* **App mode**: Otto can be fully controlled via Bluetooth using the app (see android_app folder).
 * **Detect mode**: Otto makes sounds and dances whenever movement is detected.
 * **Reply mode**: Otto answers (with a random sound and mouth animation) whenever sound is detected.
 * **Force mode**: When placing your hand at a short distance in front of Otto, Otto will move towards the hand. If you move too closely, Otto will move backwards.
@@ -19,5 +19,6 @@ Pressing the touch sensor switches between the different modes.
 The Otto Humanoid build process is detailed in [this instructable](https://www.instructables.com/Otto-DIY-Humanoid-Robot/).
 Instead of the Arduino Nano, I used a 30-pin (instead of the longer 38-pin) ESP32 SoC on a modified mini breadboard, as explained [here](https://www.pangodream.es/breadboard-adapter-for-esp32-dev-board).
 It may also be possible (and easier) to use an [Arduino Nano ESP32](https://store.arduino.cc/products/nano-esp32) on the standard Nano Shield I/O board, though I have not tried this myself.
+The external BLE Bluetooth module is not required as the ESP32 has a built-in Bluetooth module.
 
 Before loading the sketch, you will need to update it with the pin numbers your peripherals are connected to and either set your WiFi connection credentials or disable WiFi by commenting out `#define ENABLE_WIFI`.
