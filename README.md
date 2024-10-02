@@ -2,12 +2,12 @@
 Arduino IDE sketch for an Otto DIY Humanoid Robot built around the ESP32 SoC.
 
 The standard [Otto DIY robot](https://www.ottodiy.com/) makes use of an Arduino Nano (ATmega328), which is quite limited in terms of program space.
-Replacing the nano with an ESP32, we can load more extensive programs and make use of the additional ESP32 features such as the onboard WiFi module for OTA (Over-the-air) updates and the built-in Bluetooth module for controlling the robot via an app.
+Replacing the nano with an ESP32, we can load more extensive programs and make use of the additional ESP32 features such as the onboard WiFi module for OTA (over-the-air) updates and the built-in Bluetooth module for controlling the robot via an app.
 
 As an example, this sketch features the following functionalities:
 * **OTA updates**: After an initial upload via USB-C, any subsequent revisions of the sketch can be uploaded wirelessly via WiFi. This is especially handy in case of ESP32 versions which otherwise require an onboard button to be depressed while uploading via USB-C. Note that WiFi is turned off once you press the touch sensor to switch over to one of the following modes:
 * **App mode**: Otto can be fully controlled via bluetooth using the app (see android_app folder).
-* **Detect mode**: Otto makes sound and dances whenever movement is detected.
+* **Detect mode**: Otto makes sounds and dances whenever movement is detected.
 * **Reply mode**: Otto answers (with a random sound and mouth animation) whenever sound is detected.
 * **Force mode**: When placing your hand at a short distance in front of Otto, Otto will move towards the hand. If you move too closely, Otto will move backwards.
 * **Song mode**: Otto will sing a random song whenever sound is detected.
