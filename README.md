@@ -5,14 +5,16 @@ The standard [Otto DIY robot](https://www.ottodiy.com/) makes use of an Arduino 
 Replacing the nano with an ESP32, we can load more extensive programs and make use of the additional ESP32 features such as the onboard WiFi module for OTA (Over-the-air) updates and the built-in Bluetooth module for controlling the robot via an app.
 
 As an example, this sketch features the following functionalities:
-* After an initial upload via USB-C, any subsequent revisions of the sketch can be uploaded wirelessly via WiFi OTA. This is especially handy in case of ESP32 versions which otherwise require an onboard button to be depressed while uploading via USB-C. Note that WiFi is turned off once you press the touch sensor to switch over to one of the following modes:
-* App mode: Otto can be fully controlled via bluetooth using the app (see android_app folder).
-* Detect mode: Otto makes sound and dances whenever movement is detected.
-* Reply mode: Otto answers (with a random sound and mouth animation) whenever sound is detected.
-* Force mode: When placing your hand at a short distance in front of Otto, Otto will move towards the hand. If you move too closely, Otto will move backwards.
-* Song mode: Otto will sing a random song whenever sound is detected.
-* Dance mode: Otto will dance whenever sound is detected.
-* Avoid mode: Otto walks forwards until an obstacle is detected and will then move to avoid it.
+* **OTA updates**: After an initial upload via USB-C, any subsequent revisions of the sketch can be uploaded wirelessly via WiFi. This is especially handy in case of ESP32 versions which otherwise require an onboard button to be depressed while uploading via USB-C. Note that WiFi is turned off once you press the touch sensor to switch over to one of the following modes:
+* **App mode**: Otto can be fully controlled via bluetooth using the app (see android_app folder).
+* **Detect mode**: Otto makes sound and dances whenever movement is detected.
+* **Reply mode**: Otto answers (with a random sound and mouth animation) whenever sound is detected.
+* **Force mode**: When placing your hand at a short distance in front of Otto, Otto will move towards the hand. If you move too closely, Otto will move backwards.
+* **Song mode**: Otto will sing a random song whenever sound is detected.
+* **Dance mode**: Otto will dance whenever sound is detected.
+* **Avoid mode**: Otto walks forwards until an obstacle is detected and will then move to avoid it.
+
+Pressing the touch sensor switches between the different modes.
 
 The Otto Humanoid build process is detailed in [this instructable](https://www.instructables.com/Otto-DIY-Humanoid-Robot/).
 Instead of the Arduino Nano, I used a 30-pin (instead of the longer 38-pin) ESP32 SoC on a modified mini breadboard, as explained [here](https://www.pangodream.es/breadboard-adapter-for-esp32-dev-board).
