@@ -74,7 +74,6 @@ void setup() {
     OTASetup();
   #endif
   Otto.init(PIN_SG90_1, PIN_SG90_2, PIN_SG90_3, PIN_SG90_4, true, BUZZER_PIN); //Set the servo pins and Buzzer pin
-
   pinMode(TOUCH_SENSOR_PIN, INPUT);
   pinMode(US_ECHO_PIN, INPUT);    
   pinMode(US_TRIGGER_PIN, OUTPUT); 
@@ -91,7 +90,7 @@ void setup() {
 }
 
 int state = -1;
-int num_states = 7;
+const int num_states = 7;
 long last_state_switch = 0;
 
 void loop() {
@@ -123,7 +122,8 @@ void loop() {
       SCmd.addCommand("G", receiveServo);
       SCmd.addDefaultHandler(receiveStop);      
     }
-    state = (state+1) % num_states;
+    state++;
+    state = state % num_states;
     last_state_switch=millis();
     state_changed=true;
     Otto.sing(S_buttonPushed);
@@ -308,8 +308,10 @@ void avoidMode() {
     Otto.playGesture(OttoConfused);
     Otto.walk(2,1000,-1); // BACKWARD x2
     Otto.turn(3,1000,1); // LEFT x3
+    delay(50);
+  } else {
+    Otto.walk(1,1000,1); // FORWARD x1
   }
-  Otto.walk(1,1000,1); // FORWARD x1
 }
 
 void forceMode() {
@@ -355,6 +357,6 @@ void danceMode() {
     for(int angle=90-shift; angle<90; angle+=shift_inc) {pos[2] = angle;  move_servo();   delay(shift_delay); }
     Otto.clearMouth();
     Otto.home();
-    delay(250);
+    delay(500);
   }  
 }
