@@ -12,8 +12,8 @@
 #ifdef ENABLE_WIFI
   #include <WiFi.h>
   // if WiFi enabled, set your network SSID and password (empty if anonymous access allowed)
-  const char* ssid = "Belkin54g";
-  const char* password = "";
+  const char* ssid = "REPLACE_WITH_WIFI_SSID";
+  const char* password = "REPLACE_WITH_WIFI_PWD";
 #endif
 
 // update with the pin numbers your peripherals are connected to
@@ -184,10 +184,8 @@ void OTASetup() {
   Serial.println("Booting");
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
-  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
-    Serial.println("Connection Failed! Rebooting...");
-    delay(5000);
-    ESP.restart();
+  if (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    Serial.println("WiFi connection failed! Continuing without OTA support...");
   }
   ArduinoOTA
     .onStart([]() {
